@@ -1,6 +1,6 @@
 import React from 'react';
 import { Check, Smartphone, ShoppingBag, Home } from 'lucide-react';
-import { CartItem, PaymentData } from '../App';
+import { CartItem, PaymentData } from '../../lib/types';
 
 interface ReceiptProps {
   cart: CartItem[];

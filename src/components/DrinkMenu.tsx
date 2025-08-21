@@ -1,6 +1,6 @@
 import React from 'react';
 import { Coffee, Plus } from 'lucide-react';
-import { CartItem } from '../App';
+import { CartItem } from '../../lib/types';
 
 interface DrinkMenuProps {
   onAddToCart: (item: Omit<CartItem, 'id' | 'quantity'>) => void;

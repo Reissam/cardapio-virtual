@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CreditCard, Banknote, Smartphone, ArrowLeft, MapPin, Phone } from 'lucide-react';
-import { PaymentData } from '../App';
+import { PaymentData } from '../../lib/types';
 
 interface PaymentFormProps {
   total: number;

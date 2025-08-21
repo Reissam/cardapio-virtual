@@ -1,31 +1,16 @@
+'use client';
+
 import React, { useState } from 'react';
-import { Pizza, ShoppingCart, MapPin, CreditCard, Smartphone, Banknote, Check, Phone } from 'lucide-react';
-import PizzaMenu from './components/PizzaMenu';
-import HamburgerMenu from './components/HamburgerMenu';
-import DrinkMenu from './components/DrinkMenu';
-import Cart from './components/Cart';
-import PaymentForm from './components/PaymentForm';
-import Receipt from './components/Receipt';
+import { Pizza, ShoppingCart } from 'lucide-react';
+import PizzaMenu from '../components/PizzaMenu';
+import HamburgerMenu from '../components/HamburgerMenu';
+import DrinkMenu from '../components/DrinkMenu';
+import Cart from '../components/Cart';
+import PaymentForm from '../components/PaymentForm';
+import Receipt from '../components/Receipt';
+import { CartItem, PaymentData } from '../lib/types';
 
-export interface CartItem {
-  id: string;
-  type: 'pizza' | 'hamburger' | 'drink';
-  name: string;
-  size?: string;
-  flavors?: string[];
-  price: number;
-  quantity: number;
-}
-
-export interface PaymentData {
-  method: 'card' | 'cash' | 'pix';
-  changeFor?: number;
-  address: string;
-  phone: string;
-  observation?: string;
-}
-
-function App() {
+export default function Page() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [showPayment, setShowPayment] = useState(false);
   const [showReceipt, setShowReceipt] = useState(false);
@@ -143,7 +128,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50">
-      {/* Header */}
       <header className="bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-lg">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
@@ -172,17 +156,10 @@ function App() {
 
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-8">
-            {/* Pizza Menu */}
             <PizzaMenu onAddToCart={addToCart} />
-            
-            {/* Hamburger Menu */}
             <HamburgerMenu onAddToCart={addToCart} />
-            
-            {/* Drink Menu */}
             <DrinkMenu onAddToCart={addToCart} />
           </div>
-          
-          {/* Cart */}
           <div className="lg:col-span-1">
             <Cart
               cart={cart}
@@ -197,4 +174,4 @@ function App() {
   );
 }
 
-export default App;
+

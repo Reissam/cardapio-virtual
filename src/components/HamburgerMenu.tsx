@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Beef, Plus } from 'lucide-react';
-import { CartItem } from '../App';
+import { CartItem } from '../../lib/types';
 
 interface HamburgerMenuProps {
   onAddToCart: (item: Omit<CartItem, 'id' | 'quantity'>) => void;
